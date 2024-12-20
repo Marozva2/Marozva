@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Hero: React.FC = () => {
   return (
@@ -7,23 +8,32 @@ const Hero: React.FC = () => {
       id="hero"
     >
       {/* Navbar */}
-      <nav className="absolute top-0 left-0 right-0 py-4 px-6 md:px-20 flex justify-between items-center">
+      <nav className="absolute top-0 left-0 right-0 py-4 px-6 md:px-20 flex justify-between items-center z-10">
         <h1 className="text-2xl font-bold text-blue-400">Marozva Smith</h1>
         <ul className="hidden md:flex gap-8 text-lg font-medium">
           <li>
-            <a href="#about" className="hover:text-blue-400">
+            <Link
+              href="#about"
+              className="hover:text-blue-400 transition-colors"
+            >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#projects" className="hover:text-blue-400">
+            <Link
+              href="#projects"
+              className="hover:text-blue-400 transition-colors"
+            >
               Projects
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact" className="hover:text-blue-400">
+            <Link
+              href="#contact"
+              className="hover:text-blue-400 transition-colors"
+            >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <button className="block md:hidden text-gray-300 hover:text-white">
@@ -45,36 +55,36 @@ const Hero: React.FC = () => {
       </nav>
 
       {/* Center Content */}
-      <div className="flex-grow flex flex-col items-center justify-center text-center px-6 md:px-20">
+      <div className="flex-grow flex flex-col items-center justify-center text-center px-6 md:px-20 space-y-6">
         <h1 className="text-4xl md:text-6xl font-extrabold text-blue-400 leading-tight">
           Building Dreams <br /> One Line of Code at a Time
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto">
           I am Marozva Smith, a Software Engineer passionate about crafting
           solutions that matter. Welcome to my world of creativity and
           technology.
         </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <a
+        <div className="flex justify-center gap-6">
+          <Link
             href="#about"
-            className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
+            className="bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-full shadow-md transform hover:scale-105 transition-all duration-300"
           >
             About Me
-          </a>
-          <a
+          </Link>
+          <Link
             href="#projects"
-            className="border border-gray-600 hover:border-white text-gray-300 hover:text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300"
+            className="border border-gray-600 hover:border-white text-gray-300 hover:text-white font-semibold py-3 px-6 rounded-full shadow-md transform hover:scale-105 transition-all duration-300"
           >
             View Projects
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Bottom: Scroll Down Indicator */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center">
-        <a
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center z-10">
+        <Link
           href="#about"
-          className="animate-bounce text-blue-400 hover:text-blue-500"
+          className="animate-bounce text-blue-400 hover:text-blue-500 transition-all"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -90,7 +100,7 @@ const Hero: React.FC = () => {
               d="M19.5 13.5L12 21m0 0L4.5 13.5M12 21V3"
             />
           </svg>
-        </a>
+        </Link>
       </div>
     </section>
   );

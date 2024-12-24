@@ -1,7 +1,42 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const Hero: React.FC = () => {
+  const [text, setText] = useState("");
+  const phrases = React.useMemo(
+    () => ["Building Dreams, One Line of Code at a Time"],
+    []
+  );
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [letterIndex, setLetterIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const typingSpeed = 150; // Speed for typing and deleting letters
+
+  // Typewriter effect logic
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentPhrase = phrases[phraseIndex];
+      if (!isDeleting && letterIndex < currentPhrase.length) {
+        setText((prev) => prev + currentPhrase.charAt(letterIndex));
+        setLetterIndex((prev) => prev + 1);
+      } else if (isDeleting && letterIndex > 0) {
+        setText((prev) => prev.slice(0, -1));
+        setLetterIndex((prev) => prev - 1);
+      } else if (!isDeleting && letterIndex === currentPhrase.length) {
+        setIsDeleting(true);
+        setTimeout(() => {}, 500); // Pause before deleting
+      } else if (isDeleting && letterIndex === 0) {
+        setIsDeleting(false);
+        setPhraseIndex((prev) => (prev + 1) % phrases.length);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [letterIndex, isDeleting, phrases, phraseIndex]);
+
   return (
     <section
       className="relative bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white h-screen flex flex-col items-center justify-center"
@@ -53,7 +88,7 @@ const Hero: React.FC = () => {
       {/* Center Content */}
       <div className="text-center px-6 md:px-20 space-y-8">
         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight">
-          Building Dreams <br /> One Line of Code at a Time
+          {text}
         </h1>
         <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
           I am Marozva Smith, a Software Engineer passionate about crafting
@@ -67,8 +102,13 @@ const Hero: React.FC = () => {
             </button>
           </Link>
           <Link href="#projects">
-            <button className="bg-transparent border border-gray-600 text-gray-300 hover:border-white hover:text-white font-semibold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+            <button className="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
               View Projects
+            </button>
+          </Link>
+          <Link href="#contact">
+            <button className="bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-indigo-600 hover:to-purple-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">
+              Contact Me
             </button>
           </Link>
         </div>

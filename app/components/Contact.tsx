@@ -184,7 +184,7 @@ const Contact: React.FC = () => {
 
       <div className="flex justify-center mt-12 space-x-6">
         <a
-          href="https://www.linkedin.com/in/yourprofile"
+          href="https://www.linkedin.com/in/frankline-isaboke-68460428b"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:text-blue-300 transition"
@@ -192,7 +192,7 @@ const Contact: React.FC = () => {
           <FaLinkedin size={30} />
         </a>
         <a
-          href="https://github.com/yourprofile"
+          href="https://github.com/Marozva2"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-gray-300 transition"
@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
           <FaGithub size={30} />
         </a>
         <a
-          href="https://twitter.com/yourprofile"
+          href="https://X.com/Marozva2"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:text-blue-300 transition"

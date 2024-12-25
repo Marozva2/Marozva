@@ -7,19 +7,19 @@ const Testimonials: React.FC = () => {
       name: "Jane Doe",
       feedback:
         "This platform has truly revolutionized how I approach projects. Highly recommended!",
-      image: "/images/s.png",
+      image: "/images/user.png",
     },
     {
       id: 2,
       name: "John Smith",
       feedback: "An absolute game-changer. I can’t imagine working without it!",
-      image: "/images/s.png",
+      image: "/images/user.png",
     },
     {
       id: 3,
       name: "Alice Brown",
       feedback: "Exceptional quality and s experience. Kudos to the team!",
-      image: "/images/s.png",
+      image: "/images/user.png",
     },
   ];
 

@@ -16,8 +16,8 @@ const Projects: React.FC = () => {
         "An AI-powered platform for risk assessment tailored for SMEs, leveraging cutting-edge technologies.",
       techStack: ["React", "Python", "Flask", "TailwindCSS"],
       role: "Full-Stack Developer",
-      preview: "/images/finatech-preview.gif",
-      link: "/projects/finatech",
+      preview: "/images/finatech-preview.webp",
+      link: "https://fina-tech.vercel.app",
     },
     {
       title: "Dynamic Pricing Calculator",
@@ -25,7 +25,7 @@ const Projects: React.FC = () => {
         "A tool designed to revolutionize pricing strategies with real-time data analysis and insights.",
       techStack: ["Next.js", "TypeScript", "Chart.js"],
       role: "Frontend Engineer",
-      preview: "/images/pricing-calculator-preview.gif",
+      preview: "/images/pricing-calculator-preview.png",
       link: "/projects/pricing-calculator",
     },
     {
@@ -34,8 +34,8 @@ const Projects: React.FC = () => {
         "A sleek application for order tracking, integrating iOS-like design and enhanced user experience.",
       techStack: ["React Native", "Node.js", "MongoDB"],
       role: "UI/UX Designer",
-      preview: "/images/mathe-preview.gif",
-      link: "/projects/mathe",
+      preview: "/images/mathe-preview.webp",
+      link: "https://mathe.vercel.app",
     },
   ];
 

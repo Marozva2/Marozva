@@ -24,7 +24,10 @@ const Blog: React.FC = () => {
   ];
 
   return (
-    <section id="blog" className="py-20 bg-gray-900 text-gray-100">
+    <section
+      id="blog"
+      className="py-20 dark:bg-gray-900 bg-gray-100 text-gray-100"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-blue-400 mb-10 text-center">
           Latest Articles
@@ -33,10 +36,14 @@ const Blog: React.FC = () => {
           {blogs.map(({ id, title, description, date }) => (
             <div
               key={id}
-              className="bg-gray-800 rounded-lg shadow-lg p-6 hover:bg-gray-700 transition duration-300"
+              className="dark:bg-gray-800 bg-gray-200 rounded-lg shadow-lg p-6 dark:hover:bg-gray-700 hover:bg-gray-300 transition duration-300"
             >
-              <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
-              <p className="text-gray-300 mb-4">{description}</p>
+              <h3 className="text-2xl font-bold dark:text-white text-gray-700 mb-2">
+                {title}
+              </h3>
+              <p className="dark:text-gray-300 text-gray-700 mb-4">
+                {description}
+              </p>
               <div className="flex justify-between items-center">
                 <span className="text-gray-500 text-sm">{date}</span>
                 <Link

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import BackToTopButton from "./components/BackToTopButton";
 import { Analytics } from "@vercel/analytics/react";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,11 +30,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main>
-          {children}
-          <Analytics />
-        </main>
-        <BackToTopButton />
+        <Providers>
+          <main>
+            {children}
+            <Analytics />
+          </main>
+          <BackToTopButton />
+        </Providers>
       </body>
     </html>
   );

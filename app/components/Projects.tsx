@@ -42,13 +42,13 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="relative py-20 px-6 md:px-20 bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white"
+      className="relative py-20 px-6 md:px-20 dark:bg-gradient-to-b dark:from-black dark:via-gray-900 dark:to-gray-800"
     >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-blue-400 mb-12">
           Projects
         </h2>
-        <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+        <p className="text-lg md:text-xl dark:text-gray-300 text-gray-700 max-w-2xl mx-auto mb-12">
           Explore some of the exciting projects I&apos;ve crafted. Each one
           demonstrates a blend of innovation and meticulous problem-solving.
         </p>
@@ -59,7 +59,7 @@ const Projects: React.FC = () => {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative backdrop-blur-md bg-white/10 rounded-3xl shadow-lg overflow-hidden transform transition-all hover:scale-105 cursor-pointer group"
+            className="relative backdrop-blur-md dark:bg-white/10 bg-white/90 rounded-3xl shadow-lg overflow-hidden transform transition-all hover:scale-105 cursor-pointer"
             onClick={() => setSelectedProject(project)}
           >
             <Image
@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
               <h3 className="text-2xl font-semibold text-blue-400 mb-2">
                 {project.title}
               </h3>
-              <p className="text-gray-300 text-sm line-clamp-2">
+              <p className="dark:text-gray-300 text-gray-700 text-sm line-clamp-2">
                 {project.description}
               </p>
             </div>
@@ -84,16 +84,16 @@ const Projects: React.FC = () => {
       {/* Modal */}
       {selectedProject && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md"
+          className="fixed inset-0 z-50 flex items-center justify-center dark:bg-black/70 bg-black/30 backdrop-blur-md"
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-gray-800 text-white rounded-3xl shadow-lg max-w-3xl w-full p-8 relative"
+            className="dark:bg-gray-800 bg-gray-200 text-white rounded-3xl shadow-lg max-w-3xl w-full p-8 relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 bg-gray-600 hover:bg-gray-500 text-white rounded-full p-2"
+              className="absolute top-4 right-4 dark:bg-gray-600 bg-gray-400 hover:bg-gray-500 text-white rounded-full p-2"
             >
               ✕
             </button>
@@ -107,18 +107,21 @@ const Projects: React.FC = () => {
               height={400}
               className="w-full rounded-md mb-6"
             />
-            <p className="text-gray-300 mb-4">{selectedProject.description}</p>
-            <p className="text-gray-300 mb-2">
+            <p className="dark:text-gray-300 text-gray-700 mb-4">
+              {selectedProject.description}
+            </p>
+            <p className="dark:text-gray-300 text-gray-700 mb-2">
               <span className="font-semibold">Role:</span>{" "}
               {selectedProject.role}
             </p>
-            <p className="text-gray-300">
+            <p className="dark:text-gray-300 text-gray-700">
               <span className="font-semibold">Tech Stack:</span>{" "}
               {selectedProject.techStack.join(", ")}
             </p>
             <div className="mt-6 text-center">
               <Link
                 href={selectedProject.link}
+                target="_blank"
                 className="bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 px-6 rounded-full shadow transform hover:scale-105 transition-all duration-300"
               >
                 View Full Details
@@ -127,6 +130,7 @@ const Projects: React.FC = () => {
           </div>
         </div>
       )}
+      <div className="absolute bottom-0 left-0 right-0 z-[-1] h-full w-full bg-[url(/images/shape.svg)] bg-cover bg-center bg-no-repeat"></div>
     </section>
   );
 };

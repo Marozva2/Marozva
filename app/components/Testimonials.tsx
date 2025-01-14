@@ -26,7 +26,7 @@ const Testimonials: React.FC = () => {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100"
+      className="py-20 dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800 dark:text-gray-100"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-blue-400 mb-10">
@@ -36,7 +36,7 @@ const Testimonials: React.FC = () => {
           {testimonials.map(({ id, name, feedback, image }) => (
             <div
               key={id}
-              className="bg-gray-900/50 backdrop-blur-md shadow-lg p-6 rounded-xl text-left transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="dark:bg-gray-900/50 bg-gray-300 bg-gray-100/50 backdrop-blur-md shadow-lg p-6 rounded-xl text-left transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
               <div className="flex items-center gap-4 mb-4">
                 <Image
@@ -50,10 +50,10 @@ const Testimonials: React.FC = () => {
                   blurDataURL="/images/user.png"
                 />
                 <div>
-                  <h3 className="font-bold text-xl text-white">{name}</h3>
+                  <h3 className="font-bold text-xl dark:text-white">{name}</h3>
                 </div>
               </div>
-              <p className="text-gray-300 italic line-clamp-3">
+              <p className="dark:text-gray-300 text-gray-700 italic line-clamp-3">
                 {`${feedback}`}
               </p>
             </div>

@@ -29,7 +29,7 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-20 bg-gray-900 text-gray-100">
+    <section id="faq" className="py-20 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-blue-400 mb-10">
           Frequently Asked Questions
@@ -39,13 +39,15 @@ const FAQ: React.FC = () => {
             <div key={id} className="border-b border-gray-700 pb-4 mb-4">
               <button
                 onClick={() => toggleFAQ(index)}
-                className="text-lg font-bold text-white flex justify-between w-full"
+                className="text-lg font-bold dark:text-white flex justify-between w-full"
               >
                 {question}
                 <span>{openIndex === index ? "–" : "+"}</span>
               </button>
               {openIndex === index && (
-                <p className="text-gray-300 mt-2">{answer}</p>
+                <p className="dark:text-gray-300 text-gray-700 mt-2">
+                  {answer}
+                </p>
               )}
             </div>
           ))}

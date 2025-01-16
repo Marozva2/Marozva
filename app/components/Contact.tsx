@@ -200,7 +200,7 @@ const Contact: React.FC = () => {
           <FaGithub size={30} />
         </a>
         <a
-          href="https://X.com/FranklineIsabol1"
+          href="https://X.com/FranklineIsabo1"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:text-blue-600 transition"

@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             <ul className="flex space-x-4">
               <li>
                 <a
-                  href="https://twitter.com/FranklineIsabol1"
+                  href="https://twitter.com/FranklineIsabo1"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-blue-400 transition duration-300"

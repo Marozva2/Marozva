@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaGithub, FaTwitter } from "react-icons/fa";
+import LinkedInButton from "./LinkedIn";
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -182,14 +183,14 @@ const Contact: React.FC = () => {
         </button>
       </form>
 
-      <div className="flex justify-center mt-12 space-x-6">
+      <div className="flex justify-center mt-32 space-x-6">
         <a
           href="https://www.linkedin.com/in/frankline-isaboke-68460428b"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:text-blue-600 transition"
         >
-          <FaLinkedin size={30} />
+          <FaInstagram size={30} />
         </a>
         <a
           href="https://github.com/Marozva2"
@@ -336,6 +337,7 @@ const Contact: React.FC = () => {
           </defs>
         </svg>
       </div>
+      <LinkedInButton />
     </section>
   );
 };
